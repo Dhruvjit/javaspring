@@ -22,7 +22,7 @@ public class BeanScopeDemoApp {
 		// print out results
 		System.out.println("pointing out to same object: " + result);
 		
-		System.out.println("memory location for the theCoach" + theCoach);
+		System.out.println("memory location for the the theCoach" + theCoach);
 		
 		System.out.println("memory location for the theCoach" + alphaCoach);
 		
