@@ -20,7 +20,7 @@
 	<!-- baseball coach /////////////////////////////////// -->
 	<bean id="baseCoach"
 		class = "springcodes.BaseballCoach">
-		<!-- set up constructor injection -->
+		<!-- set up constructor injection by giving id of myFortuneService as ref-->
 		<constructor-arg ref = "myFortuneService" />
 	</bean>
 	
@@ -38,6 +38,10 @@
 		<property name="fortuneService" ref="myFortuneService"></property>
 		
 		<!-- email address and team injector -->
+		<!-- you can even replace value with literal value of email address and team 
+		i.e. detained8@gmail.com and barcelona-->
+		<!-- in below code we make use of sport.properties file which is referenced above -->
+		
 		<property name="emailAddress" value ="${foo.email}"></property>
 		<property name="team" value="${foo.team}"></property>	
 	</bean>

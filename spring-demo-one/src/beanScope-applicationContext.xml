@@ -8,9 +8,6 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<!-- beans have singleton scope by default -->
-	
-	
-	
 		
     <!-- Define your beans here -->
     
@@ -23,9 +20,7 @@
 	<bean id="baseCoach"
 		class = "springcodes.BaseballCoach"
 		scope = "prototype">
-		
 		<!-- set up constructor injection -->
-		
 		<constructor-arg ref = "myFortuneService" />
 	</bean>
 	
@@ -47,5 +42,4 @@
 		<property name="team" value="${foo.team}"></property>	
 	</bean>
 		
-	
 </beans>
