@@ -7,7 +7,7 @@ public class BeanScopeDemoApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		// load the spring configuration file
+		// load the spring configuration filessss
 		// we can load multiple config file by putting comma in 
 		ClassPathXmlApplicationContext context = 
 				new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
