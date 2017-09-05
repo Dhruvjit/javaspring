@@ -11,7 +11,7 @@ public class RugbyCoach implements Coach {
 
 	@Override
 	public String getDailyWorkout() {
-		return "practice your rugby throw";
+		return "practice your rugby throw \n";
 	}
 
 }
