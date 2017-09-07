@@ -14,4 +14,10 @@ public class RugbyCoach implements Coach {
 		return "practice your rugby throw \n";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
