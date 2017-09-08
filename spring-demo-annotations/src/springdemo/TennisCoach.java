@@ -1,6 +1,7 @@
 package springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // this annotation will make spring to make bean for us
@@ -22,6 +23,12 @@ public class TennisCoach implements Coach {
 	 * and inject all the methods of this object for you
 	 * so here we dont need setter or constructor injection anymore*/
 	@Autowired
+	
+	/*
+	 * we use qualifier to specify which fortune service are we interested in
+	 * this is useful when we have many classes implementing same interface
+	 * and we need to specify which one to use*/
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	
