@@ -15,6 +15,7 @@ public class AnnotationDemoApp {
 		// starting with first small letter of the actual java class i.e. TennisCoach can also be retrieved by using
 		// Coach theCoach = context.getBean("tennisCoach", Coach.class);
 		// but first you need to remove that explicit declaration of bean for spring to make use of default bean id
+		
 		Coach theCoach = context.getBean("tennisCoach", Coach.class);
 		
 		// get the bean from spring container
@@ -26,6 +27,11 @@ public class AnnotationDemoApp {
 		
 		// call method to get the daily fortune. theCoach is tennisCoach here
 		System.out.println(theCoach.getDailyFortune());
+		
+		// get the bean from spring container
+		SwimCoach swimCoach = context.getBean("michaelPhelps", SwimCoach.class);
+		
+		System.out.println(swimCoach.getEmail());
 		
 		// close the context
 		context.close();

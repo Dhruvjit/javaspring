@@ -17,17 +17,23 @@ import org.springframework.stereotype.Component;
 @Component // or @Component("thatSillyCoach")
 public class TennisCoach implements Coach {
 	
+	/*
+	 * field injection and autowired example
+	 * */
 	
-	/*making this at autowired is called field injection
+	/*you make field injection by putting autowire directly on the field like mentioned below
 	 * spring will make use of java service called reflection
 	 * and inject all the methods of this object for you
 	 * so here we dont need setter or constructor injection anymore*/
-	@Autowired
 	
 	/*
 	 * we use qualifier to specify which fortune service are we interested in
 	 * this is useful when we have many classes implementing same interface
 	 * and we need to specify which one to use*/
+	
+	// this is not type of injection but to specify which class to use
+	
+	@Autowired
 	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
@@ -38,6 +44,9 @@ public class TennisCoach implements Coach {
 		System.out.println(">> TennisCoach: inside default constructor");
 	}
 	
+	/*
+	 * constructor injection example
+	 * */
 	
 	/*constructor injection
 	// we configured dependency injection by using autowired here
@@ -53,6 +62,10 @@ public class TennisCoach implements Coach {
 //	}
 	
 
+	/*
+	 * setter injection example
+	 * */
+	
 // define a setter method
 //	@Autowired
 //	public void setFortuneService(FortuneService theFortuneService){
@@ -61,6 +74,10 @@ public class TennisCoach implements Coach {
 //	}
 
 
+	/*
+	 * any method injection example
+	 * */
+	
 // as long as any function is autowired, spring will make use of that to resolve a dependency 
 //	@Autowired
 //	public void doSomeCrazyStuff(FortuneService theFortuneService){
