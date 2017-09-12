@@ -32,7 +32,7 @@ public class TennisCoach implements Coach {
 	 * and we need to specify which one to use*/
 	
 	// this is not type of injection but to specify which class to use
-	
+	//
 	@Autowired
 	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
