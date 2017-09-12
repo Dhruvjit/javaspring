@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 	
 	/*
-	 * field injection and autowired example
+	 * field injection and qualifier example
 	 * */
 	
 	/*you make field injection by putting autowire directly on the field like mentioned below
