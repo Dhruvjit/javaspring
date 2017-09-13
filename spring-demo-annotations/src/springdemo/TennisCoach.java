@@ -50,7 +50,7 @@ public class TennisCoach implements Coach {
 	
 	/*constructor injection
 	// we configured dependency injection by using autowired here
-	// here you would do FortuneService theFortuneService = new FortuneService(), but not anymore in spring
+	// here you would do FortudneService theFortuneService = new FortuneService(), but not anymore in spring
 	// spring does everything for you. So in below code spring will inject the instance for you
 	// it is not compulsory for just one constructor starting spring 4.3 */
 	
