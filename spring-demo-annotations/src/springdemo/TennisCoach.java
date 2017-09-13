@@ -2,6 +2,7 @@ package springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // this annotation will make spring to make bean for us
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 // this component makes TennisCoach available to AnnotationDemoapp.java
 @Component // or @Component("thatSillyCoach")
+@Scope("singleton") // @Scope("prototype") will make new objects which are stored in different memory locations
 public class TennisCoach implements Coach {
 	
 	/*
@@ -34,7 +36,7 @@ public class TennisCoach implements Coach {
 	// this is not type of injection but to specify which class to use
 	////
 	@Autowired
-	@Qualifier("randomFortuneService")
+	@Qualifier("happyFortuneService")
 	private FortuneService fortuneService;
 	
 	
@@ -50,8 +52,8 @@ public class TennisCoach implements Coach {
 	
 	/*constructor injection
 	// we configured dependency injection by using autowired here
-	// here you would do FortudneService theFortuneService = new FortuneService(), but not anymore in spring
-	// spring does everything for you.. So in below code spring will inject the instance for you
+	// here you would do FortuneService theFortuneService = new FortuneService(), but not anymore in spring
+	// spring does everything for you. So in below code spring will inject the instance for you
 	// it is not compulsory for just one constructor starting spring 4.3 */
 	
 //	//@Autowired commented to show how setter injection works
@@ -66,8 +68,9 @@ public class TennisCoach implements Coach {
 	 * setter injection example
 	 * */
 	
-// define a setter method
+//	//define a setter method
 //	@Autowired
+//	@Qualifier("randomFortuneService") // use this when there are multiple classes initiallizing same interface
 //	public void setFortuneService(FortuneService theFortuneService){
 //		System.out.println(">> TennisCoach: inside setter theFortuneService");
 //		fortuneService = theFortuneService;

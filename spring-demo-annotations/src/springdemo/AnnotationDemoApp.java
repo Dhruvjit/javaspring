@@ -23,10 +23,12 @@ public class AnnotationDemoApp {
 				
 		//call a method on the bean
 		System.out.println(theCoach.getDailyWorkout());
-		System.out.println(rugbyCoach.getDailyWorkout());
 		
 		// call method to get the daily fortune. theCoach is tennisCoach here
 		System.out.println(theCoach.getDailyFortune());
+				
+		// get daily workout from rugby coach
+		System.out.println(rugbyCoach.getDailyWorkout());
 		
 		// get the bean from spring container
 		SwimCoach swimCoach = context.getBean("michaelPhelps", SwimCoach.class);
