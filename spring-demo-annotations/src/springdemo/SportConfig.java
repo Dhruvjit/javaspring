@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration // this is a spring configuration using java code
-//@ComponentScan("springdemo") // same component scan as we used with xml file
+//@ComponentScan("springdemo") // same component scan as we used with xml file // we dont require atm
 @PropertySource("classpath:sport.properties")
 public class SportConfig {
 	
