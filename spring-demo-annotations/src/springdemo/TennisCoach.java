@@ -1,5 +1,8 @@
 package springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -44,6 +47,20 @@ public class TennisCoach implements Coach {
 	// we dont require this, but chad wrote this just so that we can track our program
 	public TennisCoach(){
 		System.out.println(">> TennisCoach: inside default constructor");
+	}
+	
+	
+	// define my init method
+	@PostConstruct // this will run when bean starts execution
+	public void doMyStartupStuff(){
+		System.out.println(">> TennisCoach: inside of doMyStartupStuff() method");
+	}
+	
+	// define my destroy method
+	@PreDestroy // this will run when bean execution is about get destroyed
+	// NOTE: this wont be executed when bean scope is set to "prototype"
+	public void doMyCleanupStuff(){
+		System.out.println(">> TennisCoach: inside of doMyCleanupStuff() method");
 	}
 	
 	/*
