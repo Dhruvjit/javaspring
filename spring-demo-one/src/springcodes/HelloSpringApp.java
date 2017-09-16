@@ -10,7 +10,7 @@ public class HelloSpringApp {
 
 	public static void main(String[] args) {
 		
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub //
 		
 		// load the spring config files
 		ClassPathXmlApplicationContext context = 
