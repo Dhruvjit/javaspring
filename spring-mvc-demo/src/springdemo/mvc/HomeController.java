@@ -18,7 +18,7 @@ public class HomeController {
 	public String showPage(){ 
 		
 		/*
-		 * here spring will make use of config file and will find the view page
+		 * here spring will make use of config file and will find the view page /
 		 *WEB-INF/view/main-menu.jsp /// view is "main-menu" 
 		 * */ 
 		return "main-menu";
