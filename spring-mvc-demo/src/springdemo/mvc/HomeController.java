@@ -11,7 +11,8 @@ public class HomeController {
 	 * by this annotation. Here "/" represents root, so if anyone goes to this website
 	 * call will be given to this method here. This mapping would handle all kind of requests
 	 * like GET, POST etc 
-	 * *///
+	 * 
+	 * */
 	@RequestMapping("/") // root
 	
 	// you can give any method name you want in below code
@@ -19,7 +20,7 @@ public class HomeController {
 		
 		/*
 		 * here spring will make use of config file and will find the view page 
-		 *WEB-INF/view/main-menu.jsp /// view is "main-menu" /
+		 *WEB-INF/view/main-menu.jsp /// view is "main-menu" //
 		 * */ 
 		return "main-menu";
 	}
