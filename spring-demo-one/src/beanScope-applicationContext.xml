@@ -16,7 +16,7 @@
 		class = "springcodes.HappyFortuneService">
 	</bean>
 	
-	<!-- baseball coach /////////////////////////////////// -->
+	<!-- baseball coach ///////////////////////////////////// -->
 	<bean id="baseCoach"
 		class = "springcodes.BaseballCoach"
 		scope = "prototype">
