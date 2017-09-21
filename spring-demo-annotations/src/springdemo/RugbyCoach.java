@@ -16,7 +16,7 @@ public class RugbyCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub //
 		return null;
 	}
 
