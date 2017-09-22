@@ -36,7 +36,7 @@ public class HelloWorldController {
 		// read the request parameter from the html form // we dont require below line when using @requestparam annotation
 		//String theName = request.getParameter("studentName");
 		
-		//convert the data to all caps
+		//convert the data to all caps //
 		theName = theName.toUpperCase();
 		
 		//create the message
