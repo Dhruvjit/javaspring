@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HelloWorldController {
@@ -25,19 +26,23 @@ public class HelloWorldController {
 	
 	// new controller method to read from data
 	// add data to model	
-	@RequestMapping("/processFormVersion2")
-	public String letsShoutDude(HttpServletRequest request, Model model){
+	@RequestMapping("/processFormVersion3")
+	
+	//public String letsShoutDude(HttpServletRequest request, Model model){
+	
+	// in below code we made use of @requestparam annotation instead of normal http request
+	public String letsShoutDude(@RequestParam("studentName") String theName, Model model){
 		
-		// read the request parameter from the html form
-		String theName = request.getParameter("studentName");
+		// read the request parameter from the html form // we dont require below line when using @requestparam annotation
+		//String theName = request.getParameter("studentName");
 		
 		//convert the data to all caps
 		theName = theName.toUpperCase();
 		
 		//create the message
-		String result = "yo! " + theName;
+		String result = "yo! yo! " + theName;
 		
-		//add message to model
+		//add message to model (adding spring data to model)
 		model.addAttribute("message", result);
 		
 		return "helloworld";
