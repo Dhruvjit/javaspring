@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 
-// parent request mapping
+// parent request mapping //
 @RequestMapping("/hello")
 public class HelloWorldController {
 	
