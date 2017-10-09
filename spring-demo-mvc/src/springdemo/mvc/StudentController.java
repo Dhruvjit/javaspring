@@ -16,6 +16,8 @@ public class StudentController {
 		Student theStudent = new Student();
 		
 		// add that student object to the model
+		// we added new empty student object that will be later use as reference by jsp files
+		// this is why we created student.java class
 		theModel.addAttribute("student", new Student());
 		
 		return "student-form";
