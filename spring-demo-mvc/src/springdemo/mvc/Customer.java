@@ -8,8 +8,10 @@ public class Customer {
 	
 	private String firstName;
 	
+	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")
-	@Size(min=1)
+	@Size(min=1,message="is required")
+	
 	private String lastName;
 	
 	
