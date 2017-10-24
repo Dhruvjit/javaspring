@@ -14,7 +14,7 @@ public class HelloWorldController {
 	@RequestMapping("/showForm")
 	public String showForm(){
 		
-		// this will be passed to helloworld-form.jsp name //
+		// this will be passed to helloworld-form.jsp name 
 		return "helloworld-form";
 	}
 	
