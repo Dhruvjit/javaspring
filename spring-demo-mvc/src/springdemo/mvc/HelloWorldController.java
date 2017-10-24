@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+
+// parent request mapping
+@RequestMapping("/hello")
 public class HelloWorldController {
 	
+	// child reqeust mapping 1
 	// need a controller method to show the initial HTML form
 	@RequestMapping("/showForm")
 	public String showForm(){
@@ -18,14 +22,16 @@ public class HelloWorldController {
 		return "helloworld-form";
 	}
 	
+	// child reqeust mapping 2
 	// need a controller method to process the HTML form
 	@RequestMapping("/processForm")
 	public String processForm() {
 		return "helloworld";
 	}
 	
+	// child reqeust mapping 3
 	// new controller method to read from data
-	// add data to model	//
+	// add data to model	
 	@RequestMapping("/processFormVersion3")
 	
 	//public String letsShoutDude(HttpServletRequest request, Model model){
@@ -43,6 +49,8 @@ public class HelloWorldController {
 		String result = "yo! yo! " + theName;
 		
 		//add message to model (adding spring data to model)
+		// message is name and other argument, result is value
+		
 		model.addAttribute("message", result);
 		
 		return "helloworld";
