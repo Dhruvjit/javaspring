@@ -23,8 +23,7 @@ public class CustomerController {
 	
 	// this processes the form to get rid of 404 error 
 	@RequestMapping("/processForm")
-	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer,
-			BindingResult theBindingResult) {
+	public String processForm(@Valid @ModelAttribute("customer") Customer theCustomer, BindingResult theBindingResult) {
 			
 			System.out.println("Last name: |");
 			if (theBindingResult.hasErrors()) {
