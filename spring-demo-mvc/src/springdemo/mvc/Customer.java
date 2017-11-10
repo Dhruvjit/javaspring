@@ -6,12 +6,17 @@ import javax.validation.constraints.Size;
 
 public class Customer {
 	
+	// explanation for this to be covered later (why we put our error message in @Size)
+	@NotNull(message="is required")
+	// here 1 means minimum 1 character is required
+	@Size(min=1,message="is required")
 	private String firstName;
 	
 	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")
-	@Size(min=1,message="is required")
 	
+	// here 1 means minimum 1 character is required
+	@Size(min=1,message="is required")	
 	private String lastName;
 	
 	

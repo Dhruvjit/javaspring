@@ -20,6 +20,9 @@ Fill out the form. Asterisk (*) means required.
 		
 		First name: <form:input path ="firstName" />
 		
+		<!--  here cssClass is css style which shows error style -->		
+		<form:errors path="lastName" cssClass="error" />
+		
 		<br><br>
 		
 		Last name: <form:input path ="lastName" />
