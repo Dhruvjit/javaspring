@@ -1,10 +1,26 @@
 package springdemo.mvc;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
 public class Customer {
+	
+	@Min (value=0, message="must be equal to or greater than zero")
+	@Max (value=10, message="must be less than equal to 10")
+	private int freePasses;
+	
+	
+	public int getFreePasses() {
+		return freePasses;
+	}
+	
+	public void setFreePasses(int freePasses) {
+		this.freePasses = freePasses;
+	}
+	
 	
 	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")
