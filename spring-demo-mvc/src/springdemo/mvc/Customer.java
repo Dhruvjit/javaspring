@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
 
 public class Customer {
 	
+
 	@Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 character/digits")
 	private String postalCode;
 	
@@ -24,18 +25,32 @@ public class Customer {
 	
 	@Min (value=0, message="must be equal to or greater than zero")
 	@Max (value=10, message="must be less than equal to 10")
+	private int freePasses1;
+	
+	
+	public int getFreePasses1() {
+		return freePasses1;
+	}
+	
+	public void setFreePasses1(int freePasses) {
+		this.freePasses1 = freePasses;
+	}
+	
+	///////////
+
+	@Min (value=0, message="must be equal to or greater than zero")
+	@Max (value=10, message="must be less than equal to 10")
 	private int freePasses;
 	
 	
 	public int getFreePasses() {
-		return freePasses;
+		return freePasses1;
 	}
 	
 	public void setFreePasses(int freePasses) {
-		this.freePasses = freePasses;
+		this.freePasses1 = freePasses;
 	}
 	
-	/////////////
 	
 	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")

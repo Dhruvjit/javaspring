@@ -37,11 +37,14 @@ Fill out the form. Asterisk (*) means required.
 		
 		<br><br>
 		
+<<<<<<< HEAD
 		Postal Code: <form:input path ="postalCode" />
 		<form:errors path="postalCode" cssClass="error" />
 		
 		<br><br>
 		
+=======
+>>>>>>> branch 'master' of https://github.com/Dhruvjit/javaspring.git
 		<input type="submit" value="Submit" />
 		
 	</form:form>
