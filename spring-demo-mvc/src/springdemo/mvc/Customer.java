@@ -20,7 +20,7 @@ public class Customer {
 		this.postalCode = postalCode;
 	}
 
-	///////
+	///////--
 	
 	@Min (value=0, message="must be equal to or greater than zero")
 	@Max (value=10, message="must be less than equal to 10")
