@@ -23,20 +23,6 @@ public class Customer {
 
 	///////
 	
-	@Min (value=0, message="must be equal to or greater than zero")
-	@Max (value=10, message="must be less than equal to 10")
-	private int freePasses1;
-	
-	
-	public int getFreePasses1() {
-		return freePasses1;
-	}
-	
-	public void setFreePasses1(int freePasses) {
-		this.freePasses1 = freePasses;
-	}
-	
-	///////////
 
 	@Min (value=0, message="must be equal to or greater than zero")
 	@Max (value=10, message="must be less than equal to 10")
@@ -44,13 +30,14 @@ public class Customer {
 	
 	
 	public int getFreePasses() {
-		return freePasses1;
+		return freePasses;
 	}
 	
 	public void setFreePasses(int freePasses) {
-		this.freePasses1 = freePasses;
+		this.freePasses = freePasses;
 	}
 	
+	///
 	
 	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")
