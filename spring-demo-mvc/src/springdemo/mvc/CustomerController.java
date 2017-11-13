@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customer")
 public class CustomerController {
 	
-	// add an initbinder ... to convert trim input strings
+	// add an init binder ... to convert trim input strings
 	// remove leading and trailing whitespace
 	// resolve issue for our validation
 	
 	// you can even use standard .trim() method here on string but
 	// InitBinder is much more powerful and you can do lots of things with it
-	
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
+	
 	// this shows the form
 	// it takes the model
 	@RequestMapping("/showForm")
