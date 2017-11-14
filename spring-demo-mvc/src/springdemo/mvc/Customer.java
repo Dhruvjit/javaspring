@@ -21,7 +21,7 @@ public class Customer {
 		this.postalCode = postalCode;
 	}
 
-	///////
+	/////////
 
 	/* if you keep it as private int freePasses, then we have type conversion exception from int to string
 	 * so we rename "int" to "integer" 

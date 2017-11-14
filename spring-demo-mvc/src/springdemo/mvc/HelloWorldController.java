@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/hello")
 public class HelloWorldController {
 	
-	// child reqeust mapping 1
+	// child reqeust mapping 1 --
 	// need a controller method to show the initial HTML form 
 	@RequestMapping("/showForm")
 	public String showForm(){
