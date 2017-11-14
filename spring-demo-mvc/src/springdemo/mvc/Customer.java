@@ -22,18 +22,26 @@ public class Customer {
 	}
 
 	///////
-	
 
-	@Min (value=0, message="must be equal to or greater than zero")
-	@Max (value=10, message="must be less than equal to 10")
-	private int freePasses;
+	/* if you keep it as private int freePasses, then we have type conversion exception from int to string
+	 * so we rename "int" to "integer" 
+	 * Integer are special wrapper class in java
+	 * we do it like this because in spring all forms of data come in as string, even integers come in as string
+	 * so our trimmer class will handle all such kinds of data	
+	*/ 
+
+@NotNull(message="is required")
+@Min (value=0, message="must be equal to or greater than zero")
+@Max (value=10, message="must be less than equal to 10")
+
+private Integer freePasses;
 	
 	
-	public int getFreePasses() {
+	public Integer getFreePasses() {
 		return freePasses;
 	}
 	
-	public void setFreePasses(int freePasses) {
+	public void setFreePasses(Integer freePasses) {
 		this.freePasses = freePasses;
 	}
 	
