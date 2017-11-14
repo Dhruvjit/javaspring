@@ -71,7 +71,7 @@ private Integer freePasses;
 	}
 	
 	
-	// getters and setters for last name
+	// getters and setters for last name //
 	
 	public String getLastName() {
 		return lastName;
