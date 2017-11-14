@@ -45,7 +45,7 @@ private Integer freePasses;
 		this.freePasses = freePasses;
 	}
 	
-	///
+	/////
 	
 	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")
