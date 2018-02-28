@@ -24,7 +24,7 @@
 		<constructor-arg ref = "myFortuneService" />
 	</bean>
 	
-	<!-- Track coach ///////////////////////////////// -->
+	<!-- Track coach /////////////////////////////// -->
 	<bean id="trackCoach"
 		class = "springcodes.TrackCoach">
 		<!-- set up constructor injection -->

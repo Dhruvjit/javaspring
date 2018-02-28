@@ -45,10 +45,11 @@ private Integer freePasses;
 		this.freePasses = freePasses;
 	}
 	
-	///
+	/////
 	
 	// explanation for this to be covered later (why we put our error message in @Size)
 	@NotNull(message="is required")
+
 	// here 1 means minimum 1 character is required
 	@Size(min=1,message="is required")
 	private String firstName;
