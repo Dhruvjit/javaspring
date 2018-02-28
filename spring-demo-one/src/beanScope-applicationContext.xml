@@ -31,7 +31,7 @@
 		<constructor-arg ref = "myFortuneService" />
 	</bean>
 
-	<!-- Cricket Coach ////////////////////////////////////// -->
+	<!-- Cricket Coach ///////////////////////////////// -->
 	<bean id="myCricketCoach"
 		class = "springcodes.CricketCoach" lazy-init="true">
 		<!-- set up setter injection -->
