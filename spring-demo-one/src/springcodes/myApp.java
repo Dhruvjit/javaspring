@@ -6,7 +6,7 @@ public class myApp {
 		// TODO Auto-generated method stub
 		
 		// create the object
-		Coach theCoach = new TrackCoach();
+		Coach theCoach = new BaseballCoach();
 		System.out.println(theCoach.getDailyWorkout());
 		
 		// use the objectss
