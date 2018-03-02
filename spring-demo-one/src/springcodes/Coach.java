@@ -1,5 +1,6 @@
 package springcodes;
 
+
 public interface Coach {
 	
 	public String getDailyWorkout();
