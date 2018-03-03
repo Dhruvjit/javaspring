@@ -12,7 +12,7 @@ public class AnnotationDemoApp {
 				new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// get the bean from the container
-		//Coach theCoach = context.getBean("thatSillyCoach",Coach.class);
+		// Coach theCoach = context.getBean("thatSillyCoach",Coach.class);
 		
 		// default bean id
 		Coach theCoach = context.getBean("tennisCoach",Coach.class);
@@ -28,6 +28,12 @@ public class AnnotationDemoApp {
 		// injecting dependency happyfortuneservice.java using autowire
 		System.out.println(theCoach.getDailyFortune());
 		
+		// injecting dependency from properties file 
+		System.out.println(theCoach.getTeam());
+		
+		// injecting dependency from properties file 
+		System.out.println(theCoach.getEmail());
+				
 		// close the context
 		context.close();
 		
