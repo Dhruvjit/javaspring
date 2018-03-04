@@ -26,7 +26,7 @@ public class SportConfig {
 //		// returning swimcoach using setter injection method
 //		SwimCoach swimcoach = new SwimCoach();
 //		swimcoach.setFortuneService(sadFortuneService());
-//		return swimcoach;
+//		return swimcoach; //
 //		
 	}
 	
