@@ -1,4 +1,4 @@
-package springdemo;
+package springSourceCode;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -26,7 +26,6 @@ public class TennisCoach implements Coach {
 	
 	// field injection using autowired (so easy approach of injection)
 	@Autowired
-	// we use qualifier to suggest which dependency we are interested to inject
 	@Qualifier("randomService") // First letter lower case (thats how it is)
 	private FortuneService fortuneService;
 	//
