@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-	// this handles all sorts of web request like get-post 
+	// this handles all sorts of web request like get-post
 	
 	@RequestMapping("/")
 	public String showPage() {
