@@ -7,6 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 
+// uncomment componentscan if you want to run program using annotation
 //@ComponentScan("springSourceCode")
 @PropertySource("classpath:sport.properties")
 public class SportConfig {
