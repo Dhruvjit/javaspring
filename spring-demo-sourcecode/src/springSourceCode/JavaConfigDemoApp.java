@@ -12,7 +12,7 @@ public class JavaConfigDemoApp {
 				new AnnotationConfigApplicationContext(SportConfig.class);
 
 		// default bean id
-		Coach theCoach = context.getBean("tennisCoach",Coach.class);
+		Coach theCoach = context.getBean("swimCoach",Coach.class);
 		
 		// call a method on the bean
 		System.out.println(theCoach.getDailyWorkput());

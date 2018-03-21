@@ -22,8 +22,6 @@ public class SwimCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}
 
-
-
 	@Override
 	public String getDailyWorkput() {
 		// TODO Auto-generated method stub
