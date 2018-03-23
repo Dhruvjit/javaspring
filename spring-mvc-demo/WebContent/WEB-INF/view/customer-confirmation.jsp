@@ -9,7 +9,11 @@
 	</title>
 	
 	<body>
-			the customer is confirmed: ${customer.firstname} ${customer.lastname}		
+			the customer is confirmed: ${customer.firstname} ${customer.lastname} ${customer.freePasses}		
+			
+			<!-- here we use customer in small caps because thats how we store it
+			in model in customercontroller.java -->
+			postal code: ${customer.postalcode}
 	</body>
 
 </head>
