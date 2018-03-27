@@ -20,9 +20,14 @@ public class Customer {
 	
 	
 	// adding validation rules
+	@NotNull(message = "is required")
 	@Min(value=0, message = "must be greater than or equal to 0")
 	@Max(value=10, message = "must be smaller than or equal to 10")
-	private int freePasses;
+	// we are using "Integer" instead of "Int"
+	// because int variables cant be null, we need to declare it
+	// integer is an object so it can be null
+	// if its left as "int" then it will throw exception in the field
+	private Integer freePasses;
 	
 	@Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
 	private String postalcode;
@@ -37,11 +42,11 @@ public class Customer {
 		this.postalcode = postalcode;
 	}
 
-	public int getFreePasses() {
+	public Integer getFreePasses() {
 		return freePasses;
 	}
 
-	public void setFreePasses(int freePasses) {
+	public void setFreePasses(Integer freePasses) {
 		this.freePasses = freePasses;
 	}
 
