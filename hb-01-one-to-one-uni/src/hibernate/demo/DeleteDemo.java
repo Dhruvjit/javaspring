@@ -23,31 +23,26 @@ public class DeleteDemo {
 		
 		try {
 			
-			// create the objects
-//			Instructor tempInstructor = 
-//					new Instructor("chad", "darby", "darby@luv2code.com");
-//			
-//			instructorDetail tempInstructorDetail = 
-//					new instructorDetail("http://www.luv2code.com/youtube",
-//							"kratos motivates dhruvjit");
-
-			Instructor tempInstructor = 
-					new Instructor("Dhruvjit", "Bhonsle", "dhruvjit@hotmail.com");
-			
-			instructorDetail tempInstructorDetail = 
-					new instructorDetail("mindfulsamurai.com",
-							"Guitar Playing");
-			
-			// associate the objects
-			tempInstructor.setInstructorDetail(tempInstructorDetail);
-			
 			// start a transaction
 			session.beginTransaction();
 			
-			// save the instructor
-			//note: this will ALSO save the details object because of Cascade.ALL
-			System.out.println("saving instructor:" + tempInstructor);
-			session.save(tempInstructor);
+			// get instructor by primary key/id i.e. entry of chad darby is gone
+			int theId = 1;
+			Instructor tempInstructor = 
+					session.get(Instructor.class, theId);
+			
+			System.out.println("found instructor: " + tempInstructor);
+			
+			// delete the instructors
+			if(tempInstructor != null) {
+				System.out.println("Deleting: " + tempInstructor);
+			
+				// note: will also delete associated "details" object
+				// because of CascadeType.All
+				//
+				session.delete(tempInstructor);
+				
+			}
 			
 			// commit the transaction
 			session.getTransaction().commit();
