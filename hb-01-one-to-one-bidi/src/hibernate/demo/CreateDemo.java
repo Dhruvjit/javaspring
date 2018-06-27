@@ -23,7 +23,7 @@ public class CreateDemo {
 		
 		try {
 			
-			// create the objects
+			//  create the objects
 //			Instructor tempInstructor = 
 //					new Instructor("chad", "darby", "darby@luv2code.com");
 //			
