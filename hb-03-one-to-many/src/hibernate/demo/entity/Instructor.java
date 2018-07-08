@@ -1,5 +1,6 @@
 package hibernate.demo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -55,7 +56,6 @@ public class Instructor {
 	@OneToMany(mappedBy="instructor",
 			cascade= {CascadeType.DETACH,CascadeType.MERGE, 
 					 CascadeType.PERSIST, CascadeType.REFRESH})
-	
 	private List<Course> courses;
 	
 	public Instructor() {
@@ -82,6 +82,14 @@ public class Instructor {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 	public String getLastName() {
@@ -113,5 +121,13 @@ public class Instructor {
 		return "Instructor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", instructorDetail=" + instructorDetail + "]";
 	}
-
+	
+	// add convinience methods for bi-directional relationship
+	public void add(Course tempCourse) {
+		if (courses==null) {
+			courses = new ArrayList<>();
+		}
+		courses.add(tempCourse);
+		tempCourse.setInstructor(this);
+	}
 }
