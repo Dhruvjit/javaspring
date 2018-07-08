@@ -45,6 +45,7 @@ public class GetInstructorCoursesDemo {
 			System.out.println("Done!");
 			
 		}
+		
 		finally {
 			session.close();
 			factory.close();
