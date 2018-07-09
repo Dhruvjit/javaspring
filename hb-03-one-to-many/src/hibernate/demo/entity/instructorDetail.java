@@ -44,7 +44,6 @@ public class instructorDetail {
 	// add new field for instructor (also add getter/setters)
 	private Instructor instructor;
 	
-	
 	public Instructor getInstructor() {
 		return instructor;
 	}
