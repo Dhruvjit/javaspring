@@ -52,6 +52,18 @@ public class Instructor {
 	@JoinColumn(name="instructor_detail_id")
 	private instructorDetail instructorDetail;
 	
+	/*
+	 * very imp observation:
+	 * 
+	 * 1. the connection of course_id to instructor id is already done by sql
+	 * hence that's why after using mapped by and join column using Hibernate the program shows
+	 * correct instrucotr id in front of courses 
+	 * 
+	 * 2. mappedBy and joinColumn is extensively used by Hibernate to get the java objects displayed in right
+	 * column and place. in short to map them
+	 * 
+	 * */
+	
 	// this refers to "instructor" property in "Course" class 
 	@OneToMany(mappedBy="instructor",
 			cascade= {CascadeType.DETACH,CascadeType.MERGE, 
