@@ -42,6 +42,9 @@ public class Course {
 	 * 2. mappedBy and joinColumn is extensively used by Hibernate to get the java objects displayed in right
 	 * column and place. in short to map them
 	 * 
+	 * 3. so in this scenario, @joincolumn tells hibernate that hey look at instructor_id in the course column and
+	 * use this information to help find associated courses for instructor
+	 * 
 	 * */
 	
 	@ManyToOne(cascade= {CascadeType.DETACH,CascadeType.MERGE, 
