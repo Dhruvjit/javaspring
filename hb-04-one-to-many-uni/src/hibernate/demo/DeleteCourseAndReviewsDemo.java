@@ -14,7 +14,7 @@ import hibernate.demo.entity.instructorDetail;
  * here we create reviews to assign it to courses
  * and further test the working of the app
  * */
-public class CreateCourseAndReviewsDemo {
+public class DeleteCourseAndReviewsDemo {
 
 	public static void main(String[] args) {
 		
@@ -35,21 +35,15 @@ public class CreateCourseAndReviewsDemo {
 			// start a transaction
 			session.beginTransaction();
 			
-			// create a course
-			Course tempCourse = new Course("Cricket - how to score million points");
+			// get the course
+			int theId = 10;
+			Course tempCourse = session.get(Course.class, theId);
 			
-			/* here course id is taken from the mysql database i.e. 10*/
-			// add some reviews
-			tempCourse.addReview(new Review("Great course..loved it!"));
-			tempCourse.addReview(new Review("Hit the bat..Kill the bowler!"));
-			tempCourse.addReview(new Review("ball mera gum ho gaya bhenchod!"));
-			
-			// save the course... and leverage the cascade all :)
-			System.out.println("saving the course");
+			// print the course
 			System.out.println(tempCourse);
-			System.out.println(tempCourse.getReviews());
 			
-			session.save(tempCourse);
+			// delte the course reviews
+			session.delete(tempCourse);
 			
 			// commit the transaction
 			session.getTransaction().commit();
