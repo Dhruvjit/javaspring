@@ -1,5 +1,7 @@
 package hibernate.demo.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +33,7 @@ public class Student {
 	private String lastName;
 	
 	@Column(name="email")
-	private String email;
+	private String email;	
 	
 	public Student() {
 		
