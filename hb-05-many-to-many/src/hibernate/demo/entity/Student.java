@@ -1,5 +1,6 @@
 package hibernate.demo.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -46,9 +48,16 @@ public class Student {
 	@Column(name="email")
 	private String email;
 	
-	@ManyToOne(fetch = FetchType.LAZY,
-			cascade= {CascadeType.DETACH,CascadeType.MERGE, 
-					CascadeType.PERSIST, CascadeType.REFRESH})
+	/* use cascadeType.All for adding course to student according to question we asked in lecture 255*/
+//	@ManyToMany(fetch = FetchType.LAZY,
+//			 cascade = CascadeType.ALL)
+	
+	/* use this by default to add student to course as per the question we asked in lecture 255*/
+	@ManyToMany(fetch = FetchType.LAZY,
+			cascade= {CascadeType.DETACH,
+					CascadeType.MERGE, 
+					CascadeType.PERSIST,
+					CascadeType.REFRESH})
 		// @joinTable name should match table in mysql database
 		// this tells hibernate how to find out the relational mappings defined in Mysql table
 		
@@ -118,6 +127,16 @@ public class Student {
 		return "Student [id=" + id + ", firstname=" + 
 				firstName + ",lastname=" + lastName +
 				", email=" + email;
+	}
+	
+	// add course convinience method
+	public void addCourse(Course theCourse) {
+		
+		if(courses == null) {
+			courses = new ArrayList<>();
+		}
+		
+		courses.add(theCourse);
 	}
 	
 }

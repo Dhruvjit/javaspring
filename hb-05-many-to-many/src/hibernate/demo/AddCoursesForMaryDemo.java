@@ -15,7 +15,7 @@ import hibernate.demo.entity.instructorDetail;
  * here we create reviews to assign it to courses
  * and further test the working of the app
  * */
-public class CreateCourseAndStudentsDemo {
+public class AddCoursesForMaryDemo {
 
 	public static void main(String[] args) {
 		
@@ -37,38 +37,28 @@ public class CreateCourseAndStudentsDemo {
 			// start a transaction
 			session.beginTransaction();
 			
-			// create a course
-			Course tempCourse = new Course("guitar course for one month");
-			//Course tempCourse1 = new Course("shit is getting real this time!");
+			int studentId = 2;
 			
-			// save the course
-			System.out.println("\n Saving the course ...");
-			session.save(tempCourse);
-			//session.save(tempCourse1);
+			// get the student uchiha from the database
+			Student tempStudent  = session.get(Student.class, studentId);
 			
-			System.out.println("saved the course " + tempCourse);
+			System.out.println("\n Loaded Student: " + tempStudent);
+			System.out.println("Course: " + tempStudent.getCourses());
+
+			// create more courses
+			Course tempCourse1 = new Course("Rubik's Cube - How to speed a cube");
+			Course tempCourse2 = new Course("Sega game - mahajong");
 			
-			// create the students
-			Student tempStudent1 = new Student("Ram", "Kumar", "Ram@kumar.com");
-			Student tempStudent2 = new Student("pedro", "peterson", "pedro@peterson.com");
-			Student tempStudent3 = new Student("michael", "corleone", "godfather@gmail.com");
+			// add student to courses
+			tempCourse1.addStudent(tempStudent);
+			tempCourse1.addStudent(tempStudent);
+
+			// save the courses
+			System.out.println("\n Saving the Courses...");
 			
-			// e.g. of how to add course to the student
-			//tempStudent1.addCourse(tempCourse1);
+			session.save(tempCourse1);
+			session.save(tempCourse2);
 			
-			// e.g. of how to add student to the course
-			tempCourse.addStudent(tempStudent1);
-			tempCourse.addStudent(tempStudent2);
-			tempCourse.addStudent(tempStudent3);
-			
-			// save the students
-			System.out.println("\nSaving students ...");
-			
-			session.save(tempStudent1);
-			session.save(tempStudent2);
-			session.save(tempStudent3);
-			
-			System.out.println("Saved students: " + tempCourse.getStudents());
 			// commit the transaction
 			session.getTransaction().commit();
 		

@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -79,13 +80,20 @@ public class Course {
 	
 	
 	// lec 252 content
-	@ManyToOne(fetch = FetchType.LAZY,
-				cascade= {CascadeType.DETACH,CascadeType.MERGE, 
-						CascadeType.PERSIST, CascadeType.REFRESH})
+	
+	/* use cascadeType.All for adding course to student according to question we asked in lecture 255*/
+//	@ManyToMany(fetch = FetchType.LAZY,
+//				cascade = CascadeType.ALL)
 	
 	// @joinTable name should match table in mysql database
 	// this tells hibernate how to find out the relational mappings defined in Mysql table
 	
+	/* use this by default to add student to course as per the question we asked in lecture 255*/
+	@ManyToMany(fetch = FetchType.LAZY,
+				cascade = {CascadeType.PERSIST,
+							CascadeType.MERGE,
+							CascadeType.DETACH,
+							CascadeType.REFRESH})
 	// here inverseJoinColumn means pointing to the other side referenced by the student
 	// in Course.java side inverseJoinColumn will point to student_id and join column will point
 	// to course_id
@@ -138,7 +146,6 @@ public class Course {
 	}
 	
 	// add a convinience method
-	
 	public void addReview(Review theReview) {
 		
 		if(reviews == null) {
@@ -156,8 +163,7 @@ public class Course {
 		this.students = students;
 	}
 	
-	// add a convenience method
-	
+	// add a convenience method	
 	public void addStudent(Student theStudent) {
 		
 		if(students == null) {
