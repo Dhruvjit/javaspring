@@ -11,10 +11,12 @@ import hibernate.demo.entity.Student;
 import hibernate.demo.entity.instructorDetail;
 
 /*
- * lecture 256 many2many add more courses to student
- * here we create more courses and try to add them to student from database
+ * lecture 258 many2many Get courses for student
+ * here we get the courses for the corresponding student id from database
+ * later we also tried copying the hibernate query from console and pasting it to sql database
+ * to get the result for id we desire to get courses for
  * */
-public class AddCoursesForMaryDemo {
+public class GetCoursesForMaryDemo {
 
 	public static void main(String[] args) {
 		
@@ -44,20 +46,6 @@ public class AddCoursesForMaryDemo {
 			System.out.println("\n Loaded Student: " + tempStudent);
 			System.out.println("Course: " + tempStudent.getCourses());
 
-			// create more courses
-			Course tempCourse1 = new Course("Rubik's Cube - How to speed a cube");
-			Course tempCourse2 = new Course("warcraft 3 frozen throne");
-			
-			// add student to courses
-			tempCourse1.addStudent(tempStudent);
-			tempCourse2.addStudent(tempStudent);
-
-			// save the courses
-			System.out.println("\n Saving the Courses...");
-			
-			session.save(tempCourse1);
-			session.save(tempCourse2);
-			
 			// commit the transaction
 			session.getTransaction().commit();
 		

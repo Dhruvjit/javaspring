@@ -11,10 +11,11 @@ import hibernate.demo.entity.Student;
 import hibernate.demo.entity.instructorDetail;
 
 /*
- * lecture 256 many2many add more courses to student
- * here we create more courses and try to add them to student from database
+ * lecture 260 many2many delete student
+ * here we get the courses for the corresponding student id from database
+ * but courses are still there, we dont delete courses because of the cascade typess
  * */
-public class AddCoursesForMaryDemo {
+public class DeletePedroStudentDemo {
 
 	public static void main(String[] args) {
 		
@@ -38,25 +39,15 @@ public class AddCoursesForMaryDemo {
 			
 			int studentId = 2;
 			
-			// get the student uchiha from the database
+			// get the student pedro from the database
 			Student tempStudent  = session.get(Student.class, studentId);
 			
 			System.out.println("\n Loaded Student: " + tempStudent);
 			System.out.println("Course: " + tempStudent.getCourses());
-
-			// create more courses
-			Course tempCourse1 = new Course("Rubik's Cube - How to speed a cube");
-			Course tempCourse2 = new Course("warcraft 3 frozen throne");
 			
-			// add student to courses
-			tempCourse1.addStudent(tempStudent);
-			tempCourse2.addStudent(tempStudent);
-
-			// save the courses
-			System.out.println("\n Saving the Courses...");
-			
-			session.save(tempCourse1);
-			session.save(tempCourse2);
+			// delete student pedro
+			System.out.println("\n Deleting student: " + tempStudent);
+			session.delete(tempStudent);
 			
 			// commit the transaction
 			session.getTransaction().commit();

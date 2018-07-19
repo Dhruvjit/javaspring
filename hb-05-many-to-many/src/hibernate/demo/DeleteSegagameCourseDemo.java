@@ -11,10 +11,12 @@ import hibernate.demo.entity.Student;
 import hibernate.demo.entity.instructorDetail;
 
 /*
- * lecture 256 many2many add more courses to student
- * here we create more courses and try to add them to student from database
+ * lecture 259 many2many delete a course from the database
+ * here we delete the course specified by specific student id
+ * we also verify that in doing so student is not deleted and only course is deleted
+ * this is because of different types of cascade that we used
  * */
-public class AddCoursesForMaryDemo {
+public class DeleteSegagameCourseDemo {
 
 	public static void main(String[] args) {
 		
@@ -36,27 +38,14 @@ public class AddCoursesForMaryDemo {
 			// start a transaction
 			session.beginTransaction();
 			
-			int studentId = 2;
+			// get the sega game course from the db
+			int courseId = 12;
+			Course tempCourse = session.get(Course.class, courseId);
 			
-			// get the student uchiha from the database
-			Student tempStudent  = session.get(Student.class, studentId);
+			// delete that course
+			System.out.println("Deleteing Course: " + tempCourse);
 			
-			System.out.println("\n Loaded Student: " + tempStudent);
-			System.out.println("Course: " + tempStudent.getCourses());
-
-			// create more courses
-			Course tempCourse1 = new Course("Rubik's Cube - How to speed a cube");
-			Course tempCourse2 = new Course("warcraft 3 frozen throne");
-			
-			// add student to courses
-			tempCourse1.addStudent(tempStudent);
-			tempCourse2.addStudent(tempStudent);
-
-			// save the courses
-			System.out.println("\n Saving the Courses...");
-			
-			session.save(tempCourse1);
-			session.save(tempCourse2);
+			session.delete(tempCourse);
 			
 			// commit the transaction
 			session.getTransaction().commit();
