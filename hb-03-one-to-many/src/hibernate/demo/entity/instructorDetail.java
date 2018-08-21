@@ -47,11 +47,11 @@ public class instructorDetail {
 	public Instructor getInstructor() {
 		return instructor;
 	}
-
+	
 	public void setInstructor(Instructor instructor) {
 		this.instructor = instructor;
 	}
-
+	
 	public instructorDetail() {
 		
 	}
