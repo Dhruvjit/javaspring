@@ -18,6 +18,16 @@
 	<div id = "container">
 		<div id = "content">
 		 
+		 <!-- put new button: Add customer -->
+		 
+		 <!-- call our spring controller mapping on pressing this button -->
+		 <input type="button" value="Add Customer"
+		 	onclick = "window.location.href='showFormForAdd'; return false;"
+		 	class="add-button"
+		 />
+		 
+		 <p>
+		 
 		 <!-- add our html table here -->
 		 
 		 <table>
@@ -41,6 +51,7 @@
 		 		</tr>
 		 	
 		 	</c:forEach>
+		 	
 		 </table>
 		 
 		</div>

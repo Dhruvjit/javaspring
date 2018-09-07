@@ -49,7 +49,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
+	
+	/*
+	 * @Transactional is used to manage begin and end of the session 
+	 * there is no need for session.begintransaction() and
+	 * session.gettransaction().commit by making use of this annotation
+	 * 
+	 * we have commented @transactional here because its already implemented
+	 * in CustomerService.java class
+	 * */
+	
+	//@Transactional
 	public List<Customer> getCustomers() {
 		
 		// get the current hibernate session
@@ -60,11 +70,24 @@ public class CustomerDAOImpl implements CustomerDAO {
 				currentSession.createQuery("from Customer", Customer.class);
 		
 		// execute query and get result list
-		List<Customer> customers = theQuery.getResultList();
+		List<Customer> customer = theQuery.getResultList();
 		
 		// return the results
-		return customers;
+		return customer;
 
+	}
+
+	@Override
+	public void saveCustomer(Customer theCustomer) {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		// save the customer ... finally!
+		currentSession.save(theCustomer);
+		
+		// 
+		
 	}
 
 }
