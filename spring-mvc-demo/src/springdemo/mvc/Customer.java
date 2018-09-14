@@ -15,7 +15,7 @@ public class Customer {
 	
 	// you can use a pattern to remove spaces, but it will failed to trim the spaces
 	//@Pattern(regexp = "\\S+", message = "Spaces are not allowed")
-	// best way is to use initbinder as shown in customercontroller.java
+	// best way is to use initbinder as shown in customercontroller.java //
 	private String lastname;
 	
 	
